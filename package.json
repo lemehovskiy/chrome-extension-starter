@@ -18,9 +18,31 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "INLINE_RUNTIME_CHUNK=false craco build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "watch": "npm-watch",
+    "lint": "npm run lint:eslint && npm run lint:prettier",
+    "lint:eslint": "eslint src/ --ext .ts,.tsx --max-warnings=0",
+    "lint:prettier": "prettier 'src/**/*.{ts,tsx}' --check",
+    "fix": "npm run fix:prettier && npm run fix:eslint",
+    "fix:eslint": "eslint src/ --ext .ts,.tsx --fix --max-warnings=0",
+    "fix:prettier": "prettier 'src/**/*.{ts,tsx}' --write",
+    "prepare": "husky install"
+  },
+  "lint-staged": {
+    "*.{ts,tsx}": [
+      "eslint --fix --max-warnings=0",
+      "prettier --write"
+    ]
+  },
+  "watch": {
+    "build": {
+      "patterns": [
+        "src"
+      ],
+      "extensions": "ts,tsx,css"
+    }
   },
   "eslintConfig": {
     "extends": [
@@ -39,5 +61,19 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@types/chrome": "^0.0.246",
+    "craco": "^0.0.3",
+    "eslint": "^8.51.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-airbnb-typescript": "^17.1.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-prettier": "^5.0.1",
+    "eslint-plugin-react": "^7.33.2",
+    "husky": "^8.0.3",
+    "lint-staged": "^15.0.0",
+    "npm-watch": "^0.11.0",
+    "prettier": "^3.0.3"
   }
 }
