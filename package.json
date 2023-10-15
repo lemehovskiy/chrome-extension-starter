@@ -17,11 +17,10 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "react-scripts start",
     "build": "INLINE_RUNTIME_CHUNK=false craco build",
+    "watch": "npm-watch",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "watch": "npm-watch",
     "lint": "npm run lint:eslint && npm run lint:prettier",
     "lint:eslint": "eslint src/ --ext .ts,.tsx --max-warnings=0",
     "lint:prettier": "prettier 'src/**/*.{ts,tsx}' --check",

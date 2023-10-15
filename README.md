@@ -1,46 +1,72 @@
-# Getting Started with Create React App
+# Chrome Extension Starter
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a Chrome extension starter project built using the Create React App with TypeScript template. It provides a foundation for building Chrome extensions using modern web technologies and React.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+- **Basic React Hooks:**
+  - `useDomEvaluator`: A custom hook for injecting content scripts into web pages, allowing you to interact with and modify web page content.
+  - `useStorageState`: A custom hook for managing and persisting extension data in the Chrome storage.
 
-### `npm start`
+## Getting Started
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### Installation
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+1. Clone the repository:
 
-### `npm test`
+   ```bash
+   git clone https://github.com/lemehovskiy/chrome-extension-starter.git
+   ```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+2. Navigate to the project directory:
 
-### `npm run build`
+    ```bash
+    cd chrome-extension-starter
+    ```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+2. Install dependencies:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+    ```bash
+    npm install
+    ```
+    
+### Usage
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1. Build extension:
 
-### `npm run eject`
+    * For a one-time build:
+    ```bash
+    npm run build
+    ```
+    * For development with auto-reloading on changes:
+    ```bash
+    npm run watch
+    ```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+2. Open Google Chrome and go to `chrome://extensions/`.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+3. Enable "Developer mode" in the top-right corner of the extensions page.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+4. Click on the "Load unpacked" button.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+5. Select the `build` directory inside your project directory. This will load your extension into Chrome.
 
-## Learn More
+6. You should now see your extension in the list of installed extensions. You can interact with your extension from there.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Reloading the Extension
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+1. If you make changes to your extension and want to see those changes reflected in Chrome, follow these steps to reload the extension:
+
+2. Go to chrome://extensions/.
+
+3. Find your extension in the list of installed extensions.
+
+4. Click the "Reload" button located under your extension. This will reload the extension with your latest changes.
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE.md file for details.
+
+## Support
+
+If you have any questions or issues, please feel free to open an issue on the GitHub repository.
