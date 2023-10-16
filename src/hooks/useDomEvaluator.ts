@@ -2,13 +2,11 @@ import { useState } from "react";
 import { ActionType, MessageTypes } from "../chromeServices/types";
 
 const useDomEvaluator = <T extends ActionType>(type: MessageTypes) => {
-  const [result, setResult] = useState<
-    T["response"] | ResponseType | undefined
-  >(undefined);
+  const [result, setResult] = useState<T["response"] | undefined>(undefined);
 
   const evaluate = (
     payload?: T["payload"],
-  ): Promise<T["response"] | ResponseType | undefined> =>
+  ): Promise<T["response"] | undefined> =>
     new Promise((resolve, reject) => {
       if (chrome.tabs) {
         chrome.tabs.query(
